@@ -3,7 +3,7 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
+ html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
@@ -18,8 +18,20 @@ body {
   margin: 0;
   color: #244751;
   background-color: #eee;
+  font-family: 'Roboto Condensed', sans-serif;
+  height: 100%;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+.container {
+  box-sizing: border-box;
+  margin: 0 auto 0 auto;
+  width: 450px;
+  height: 100vh;
+  background-color: white;
+  padding:  10px
+}
+
+.new-tweet {
+  padding: 10px;
+  background-color: #eee; 
+}
