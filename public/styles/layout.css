@@ -21,3 +21,12 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
   height: 100%;
 }
+
+.container {
+  box-sizing: border-box;
+  margin: 0 auto 0 auto;
+  width: 450px;
+  height: 100vh;
+  background-color: white;
+  padding:  40px 2em 20px 2em;
+}
