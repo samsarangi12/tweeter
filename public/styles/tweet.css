@@ -7,9 +7,12 @@ article.tweet   {
     opacity: 0.8;
 }
 
-article.tweet:hover   {
+article.tweet:hover {
     opacity: 1;
+    border-color: black;
+    display: block;
 }
+
 
 article.tweet header.tweet-header {
     display: flex;
@@ -39,13 +42,26 @@ article.tweet header.tweet-header p.user-name {
     font-size: large;
     font-weight: bold;
 }
-article.tweet header.tweet-header span.user-handle {
 
+article.tweet footer.tweet-footer {
+    display: flex;
 }
-/* article.tweet header.tweet-header small.user-handle {
-    float: right;
-    margin-top: 10px;
-    margin-bottom: 0px;
-    margin-right: 10px;
-} */
-/* article.tweet header */
+
+article.tweet footer.tweet-footer figcaption {
+    align-items: left;
+    display: flex;
+    margin-left: 240px;
+    opacity: 0;
+}
+
+article.tweet footer.tweet-footer img.icon {
+    width: 20px;
+    height: 20px;
+}
+
+article.tweet:hover footer.tweet-footer figcaption {
+    opacity: 1;
+}
+
+
+
