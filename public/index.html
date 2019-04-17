@@ -18,12 +18,12 @@
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
 
 
   </head>
-  
+
   <body>
 
     <!-- Top nav bar (fixed) -->
@@ -34,7 +34,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet">
+        <section class="new-tweet">
           <h2 class="compose">Compose Tweet</h2>
           <hr>
           <form action="/tweets" method="POST">
@@ -43,27 +43,8 @@
             <div class="counter"><span>140</span></div>
           </form>
         </section>
-        <article class="tweet">
-          <header class="tweet-header">
-            <img class="tweet-image" src="/images/tweetImg.png" >
-            <figcaption>
-              <p class="user-name">Bill Fields</p>
-              <span class="user-handle">@MrFields</span>
-            </figcaption>
-          </header>
-          <div class="tweet-body">
-            <p>Little tweet here</p>
-          </div> 
-          <footer class="tweet-footer">
-            <span>10 days ago</span>
-            <figcaption>
-              <img class="icon" src="/images/flagIcon.png"></img>
-              <img class="icon" src="/images/retweet.png"></img>              
-              <img class="icon" src="/images/love.png"></img>
-            </figcaption>
-          </footer>
-        </article>
+        <div class="tweets">
+        </div>
     </main>
-
   </body>
 </html>
