@@ -1,5 +1,26 @@
+function loadTweets () {
+    $.ajax({
+    type: 'GET',
+    url: `/tweets`,
+    dataType: 'JSON'
+    })
+   .done(function (data){
+    renderTweets(data);
+   })
+}
 
-$(document).ready(function() {
+function renderTweets(inputdata) {
+  for (var i = inputdata.length; i > 0; i--) {
+    var $tweet = createTweetElement(inputdata[i-1]);
+   $('.tweets').append($tweet);
+  }
+}
+
+function escape(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 
 function createTweetElement(data) {
 
@@ -13,17 +34,17 @@ function createTweetElement(data) {
 
   let HTMLToAppend = `<article class="tweet">`
                    +`<header class="tweet-header">`
-                   + `<img class="tweet-image" src=${tweetImage} >`
+                   + `<img class="tweet-image" src=${escape(tweetImage)} >`
                    + `<figcaption>`
-                   + `<p class="user-name">${username}</p>`
-                   + `<span class="user-handle">${userHandle}</span>`
+                   + `<p class="user-name">${escape(username)}</p>`
+                   + `<span class="user-handle">${escape(userHandle)}</span>`
                    + `</figcaption>`
                    + `</header>`
                    + `<div class="tweet-body">`
-                   + `<p>${tweetBody}</p>`
+                   + `<p>${escape(tweetBody)}</p>`
                    + `</div>`
                    + `<footer class="tweet-footer">`
-                   + `<span>${daysElapsed} day(s) ago</span>`
+                   + `<span>${escape(daysElapsed)} day(s) ago</span>`
                    + `<figcaption>`
                    + `<img class="icon" src="/images/flagIcon.png"></img>`
                    + `<img class="icon" src="/images/retweet.png"></img>`
@@ -34,29 +55,10 @@ function createTweetElement(data) {
   return HTMLToAppend;
 }
 
-function loadTweets () {
-    $.ajax({
-    type: 'GET',
-    url: `/tweets`,
-    dataType: 'JSON'
-    })
-   .done(function (data){
-    renderTweets(data);
-   })
-}
-
-function renderTweets(inputdata) {
-  inputdata.forEach(function(item) {
-  var $tweet = createTweetElement(item);
-   $('.tweets').append($tweet);
-  })
-}
+$(document).ready(function() {
 
 loadTweets();
 
 });
 
 // Test / driver code (temporary). Eventually will get this from the server.
-
-
-
