@@ -1,4 +1,3 @@
-
   #nav-bar {
     margin: 0;
     height: 80px;
@@ -26,7 +25,19 @@
     font-weight: bold
   }
 
+  #nav-bar #compose-button {
+    width: auto;
+    height: 60px;
+    background-color: lightcyan;
+    color: black;
+    border-color: black;
+    margin-left: 70%;
+    margin-top: 10px;
+}
 
+    #nav-bar #compose-button:hover {
+    background-color: white;
+  }
 
 
   /*
