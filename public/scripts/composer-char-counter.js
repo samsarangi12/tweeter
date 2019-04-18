@@ -9,5 +9,16 @@ $(document).ready(function() {
         } else {
             $('.counter', this.parentElement).text(140 - tweetLength).removeClass("setRed");
         }
+        //Following code submits a request to the server
     });
+    $(".submit-button").on('click', function(event) {
+        $.ajax({
+            type: 'POST',
+            url: `/`,
+            datatype: 'JSON',
+            data: $( "form" ).serialize()
+        })
+        .done(event.preventDefault())
+         console.log($( "form" ).serialize())
+    })
   });
