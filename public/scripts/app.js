@@ -12,10 +12,11 @@ function loadTweets () {
 }
 
 function renderTweets(inputdata) {
-  for (var i = inputdata.length; i > 0; i--) {
-    var $tweet = createTweetElement(inputdata[i-1]);
-   $('.tweets').append($tweet);
-  }
+  $('.tweets').empty();
+  inputdata.forEach(function(item) {
+    var $tweet = createTweetElement(item)
+    $('.tweets').prepend($tweet);
+  })
 }
 
 function escape(str) {
@@ -59,13 +60,11 @@ function createTweetElement(data) {
 }
 
 $(document).ready(function() {
-
   $('#compose-button').on('click', function (event) {
     $('.new-tweet').toggle();
   })
 
   loadTweets();
-
 //Following code submits a request to the server
 //It also checks for the validity of the tweet performs the POST only if
 //the tweet is valid and length is greater than 140 characters.
@@ -75,9 +74,13 @@ $(document).ready(function() {
     let tweet = $("textarea").val();
     let tweetLength = $("textarea").val().length;
     if (!tweet) {
-        alert ("Tweet not entered by the user !!");
-    } else if (tweetLength > 141) {
-        alert ("Tweet longer than 140 characters!!");
+        let $tweetError = `<p class="error-message">Tweet is empty</p>`
+        $('.counter').append($tweetError);
+        $('.error-message').toggle();
+    } else if (tweetLength > 140) {
+        let $tweetTooLong = `<p class="error-message">Tweet is longer than 140</p>`
+        $('.counter').append($tweetTooLong);
+        $('.error-message').toggle();
     } else {
         $.ajax({
         type: 'POST',
@@ -86,11 +89,8 @@ $(document).ready(function() {
         data: $( "form" ).serialize()
         })
         .done( function() {
-            loadTweets();
-            window.location = '/';
+          loadTweets();
         })
     }
   })
 });
-
-// Test / driver code (temporary). Eventually will get this from the server.

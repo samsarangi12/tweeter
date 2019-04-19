@@ -3,12 +3,18 @@ main.container section.new-tweet {
   display: none;
 }
 
+main.container section.new-tweet p.error-message {
+  color: red;
+  font-size: medium;
+  display: none;
+}
+
 .new-tweet {
   box-sizing: border-box;
-  padding: 10px;
+  padding: 1%;
   background-color: #eee;
   border-radius: 10px;
-  height: 160px;
+  height: 180px;
 }
 
 .compose {

@@ -43,6 +43,9 @@ article.tweet header.tweet-header p.user-name {
     font-weight: bold;
 }
 
+article.tweet div.tweet-body {
+    width: 100%;
+}
 
 article.tweet footer.tweet-footer span{
     display: inline;

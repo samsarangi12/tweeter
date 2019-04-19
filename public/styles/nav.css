@@ -19,10 +19,9 @@
     color: #e8fdff;
     font-size: 1.5em;
     float: left;
-    /* padding-top: 24px; */
     padding-top: 2%;
     margin-left: 10px;
-    font-weight: bold
+    font-weight: bold;
   }
 
   #nav-bar #compose-button {
@@ -33,13 +32,8 @@
     border-color: black;
     margin-left: 70%;
     margin-top: 10px;
-}
+  }
 
     #nav-bar #compose-button:hover {
     background-color: white;
   }
-
-
-  /*
-   * Additional CSS can be defined below or in other CSS files, as per instructions
-   */
