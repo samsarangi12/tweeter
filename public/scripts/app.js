@@ -91,6 +91,7 @@ $(document).ready(function() {
         .done( function() {
           loadTweets();
         })
+        $('#tweet-text').val("");
     }
   })
 });
