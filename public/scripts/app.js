@@ -1,4 +1,4 @@
-//Code to display the Compose tweet section after compose-button is clicked
+//Load tweet function which executes a GET request to load tweets.
 
 function loadTweets () {
     $.ajax({
@@ -19,13 +19,15 @@ function renderTweets(inputdata) {
   })
 };
 
+//Function to handle cross-site scripting.
+
 function escape(str) {
   var div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
-//The following code created the tweet container dynamically and returns the new tweet.
+//Function to create the tweet container dynamically and returns the new tweet.
 
 function createTweetElement(data) {
   let tweetImage      = data.user.avatars.small;
@@ -65,6 +67,7 @@ $(document).ready(function() {
   });
 
   loadTweets();
+
 //Following code submits a request to the server
 //It also checks for the validity of the tweet performs the POST only if
 //the tweet is valid and length is greater than 140 characters.
