@@ -45,7 +45,7 @@ article.tweet header.tweet-header p.user-name {
 
 article.tweet div.tweet-body {
     width: 100%;
-    word-break: break-all
+    overflow-wrap: break-word;
 }
 
 article.tweet footer.tweet-footer span{

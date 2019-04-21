@@ -96,7 +96,6 @@ $(document).ready(function() {
         })
         $('#tweet-text').val('');
         $('.counter').text('140');
-
     }
   })
 });
